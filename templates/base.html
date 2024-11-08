@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title if title else "ACIMM" }}</title>
+    <link rel="stylesheet" href="../static/img/logo.png">
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            
+            <!-- Div para centralizar o logo -->
+            <div class="center-logo">
+                <div id="logo">
+                    <img src="../static/img/logo.png" alt="Logo">
+                </div>
+            </div>
+    
+            <!-- Mover o botão do menu para o mesmo contêiner dos botões de Buscar e Carrinho -->
+            <div id="search-cart">
+                <button>Menu</button>
+                <button>Buscar</button>
+                <button>Carrinho</button>
+            </div>
+        </nav>
+    </header>    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 ACIMM - Stay Humble</p>
+    </footer>
+</body>
+</html>
