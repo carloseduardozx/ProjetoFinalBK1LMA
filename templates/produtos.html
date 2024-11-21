@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="produtos-list">
+    <h1>Nossos Produtos</h1>
+    {% for produto in produtos %}
+        <div class="produto">
+            <h3>{{ produto['nome'] }}</h3>
+            <p>{{ produto['descricao'] }}</p>
+            <span>R$ {{ produto['preco'] }}</span>
+            <a href="{{ url_for('adicionar_carrinho', produto_id=produto['id']) }}" class="btn">Adicionar ao Carrinho</a>
+        </div>
+    {% endfor %}
+</section>
+{% endblock %}

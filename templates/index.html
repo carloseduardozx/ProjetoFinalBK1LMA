@@ -1,40 +1,18 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACIMM - Stay Humble</title>
-    <link rel="stylesheet" href="../static/css/style.css">
-</head>
-<body>
-    <header>
-        <nav class="nav-bar">
-            <button id="menu-button">Menu</button>
-            <div id="logo">
-                <img src="../static/img/logo.png" alt="Logo">
-            </div>
-            <div id="search-cart">
-                <button>Buscar</button>
-                <button>Carrinho</button>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <div class="hero-section">
-            <div class="hero-content">
-                <h1>ACIMM</h1>
-                <p>Stay Humble</p>
-            </div>
-            <div class="hero-background">
-                <video autoplay loop muted>
-                    <source src="../static/video/fundo2.mp4" type="video/mp4">
-                    Seu navegador não suporta vídeos HTML5.
-                </video>
-            </div>
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Banner">
+    <div class="hero-title">
+        <h1>ACIMM</h1>
+    </div>
+</section>
+<div class="produtos">
+    {% for produto in produtos %}
+        <div class="produto">
+            <h3>{{ produto['nome'] }}</h3>
+            <p>{{ produto['descricao'] }}</p>
+            <span>R$ {{ produto['preco'] }}</span>
         </div>
-    </main>
-    <footer>
-        <p>&copy; 2024 ACIMM - Stay Humble</p>
-    </footer>
-</body>
-</html>
+    {% endfor %}
+</div>
+{% endblock %}

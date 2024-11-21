@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "nome": "Anel de Ouro",
+        "descricao": "Anel feito de ouro puro 18k.",
+        "preco": 1200.00
+    },
+    {
+        "id": 2,
+        "nome": "Anel de Prata",
+        "descricao": "Elegante anel de prata.",
+        "preco": 250.00
+    },
+    {
+        "id": 3,
+        "nome": "Anel de Diamante",
+        "descricao": "Anel luxuoso com diamantes genuínos.",
+        "preco": 5000.00
+    }
+]

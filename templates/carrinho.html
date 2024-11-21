@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="carrinho">
+    <h1>Seu Carrinho</h1>
+    {% if carrinho %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in carrinho %}
+                    <tr>
+                        <td>{{ item['nome'] }}</td>
+                        <td>R$ {{ item['preco'] }}</td>
+                        <td>
+                            <a href="{{ url_for('remover_carrinho', produto_id=item['id']) }}" class="btn btn-remove">Remover</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h3>Total: R$ {{ total }}</h3>
+    {% else %}
+        <p>Seu carrinho está vazio.</p>
+    {% endif %}
+    <a href="{{ url_for('produtos') }}" class="btn">Continuar Comprando</a>
+</section>
+{% endblock %}
