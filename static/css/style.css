@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 
-/* Body */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -13,13 +12,12 @@ body {
     background-color: #fff7f7;
 }
 
-/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #a59880;
+    background-color: #e4c4ae;
     color: #fff;
 }
 
@@ -44,15 +42,14 @@ body {
 }
 
 .navbar .menu a:hover {
-    color: #e6c773;
+    color: #000000;
 }
 
-/* Hero Section */
 .hero {
     position: relative;
     width: 100%;
     height: 60vh;
-    background: url('../images/header2.png') center/cover no-repeat;
+    background: url('../images/teste2.jpg') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,7 +62,6 @@ body {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* Produtos */
 .produtos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -98,11 +94,10 @@ body {
 
 .produto span {
     font-size: 1.2rem;
-    color: #e6c773;
+    color: #967a67;
     font-weight: bold;
 }
 
-/* Contato */
 .contato {
     padding: 20px;
     background-color: #fff;
@@ -144,7 +139,7 @@ body {
 }
 
 .contato button {
-    background-color: #e6c773;
+    background-color: #e4c4ae;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -153,7 +148,7 @@ body {
 }
 
 .contato button:hover {
-    background-color: #e6c773;
+    background-color: #b5dab6;
 }
 
 /* Footer */
@@ -243,4 +238,117 @@ footer p {
 .carrinho h3 {
     text-align: right;
     margin-top: 10px;
+}
+.sucesso-contato {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.sucesso-contato h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.sucesso-contato p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.sucesso-contato .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e6c773;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.sucesso-contato .btn:hover {
+    background-color: #d4af37;
+}
+.sucesso-compra {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.sucesso-compra h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.sucesso-compra p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.sucesso-compra .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e6c773;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.sucesso-compra .btn:hover {
+    background-color: #d4af37;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+.sobre-nos {
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 20px;
+    text-align: justify; 
+    line-height: 1.8; 
+    color: #333;
+}
+
+.sobre-nos h1 {
+    text-align: center; 
+    margin-bottom: 20px; 
+    font-size: 2.5rem; 
+    color: #2c3e50; 
+}
+
+.sobre-nos p {
+    margin-bottom: 15px; 
+    font-size: 1rem;
 }

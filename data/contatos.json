@@ -1,0 +1,12 @@
+[
+    {
+        "nome": "João Silva",
+        "email": "joao@email.com",
+        "mensagem": "Gostaria de saber mais sobre os anéis disponíveis."
+    },
+    {
+        "nome": "Maria Oliveira",
+        "email": "maria@email.com",
+        "mensagem": "Vocês fazem anéis personalizados?"
+    }
+]

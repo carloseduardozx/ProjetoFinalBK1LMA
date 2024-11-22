@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+
 {% block content %}
 <section class="hero">
     <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Banner">
@@ -9,6 +10,7 @@
 <div class="produtos">
     {% for produto in produtos %}
         <div class="produto">
+            <img src="{{ url_for('static', filename=produto['imagem']) }}" alt="{{ produto['nome'] }}">
             <h3>{{ produto['nome'] }}</h3>
             <p>{{ produto['descricao'] }}</p>
             <span>R$ {{ produto['preco'] }}</span>

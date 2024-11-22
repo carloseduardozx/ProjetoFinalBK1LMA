@@ -1,8 +1,24 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+import json
+import os
 from db_connector import get_produtos
 
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'
+
+CONTATOS_FILE = "contatos.json"
+
+def save_contato_to_file(data):
+    if os.path.exists(CONTATOS_FILE):
+        with open(CONTATOS_FILE, "r") as file:
+            contatos = json.load(file)
+    else:
+        contatos = []
+
+    contatos.append(data)
+
+    with open(CONTATOS_FILE, "w") as file:
+        json.dump(contatos, file, indent=4)
 
 @app.route("/")
 def home():
@@ -16,10 +32,25 @@ def sobre():
 @app.route("/contato", methods=["GET", "POST"])
 def contato():
     if request.method == "POST":
-        dados = request.form
-        save_contato(dados)
-        return jsonify({"message": "Contato enviado com sucesso!"})
+        nome = request.form.get("nome")
+        email = request.form.get("email")
+        mensagem = request.form.get("mensagem")
+
+        contato_data = {
+            "nome": nome,
+            "email": email,
+            "mensagem": mensagem
+        }
+
+        save_contato_to_file(contato_data)
+
+        return redirect(url_for("contato_sucesso"))
+
     return render_template("contato.html")
+
+@app.route("/contato/sucesso")
+def contato_sucesso():
+    return render_template("contato_sucesso.html")
 
 @app.route("/produtos")
 def produtos():
@@ -49,6 +80,16 @@ def remover_carrinho(produto_id):
     session["carrinho"] = [item for item in carrinho if item["id"] != produto_id]
     session.modified = True
     return redirect(url_for("carrinho"))
+
+@app.route("/finalizar_compra", methods=["POST"])
+def finalizar_compra():
+    session["carrinho"] = []
+    session.modified = True
+    return redirect(url_for("compra_sucesso"))
+
+@app.route("/compra_sucesso")
+def compra_sucesso():
+    return render_template("compra_sucesso.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

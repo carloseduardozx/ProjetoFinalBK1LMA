@@ -1,20 +1,23 @@
 [
     {
         "id": 1,
-        "nome": "Anel de Ouro",
-        "descricao": "Anel feito de ouro puro 18k.",
-        "preco": 1200.00
+        "nome": "Meia Aliança Jazz",
+        "descricao": "Feito em Ouro Amarelo 18k com Diamantes.",
+        "preco": 10500.0,
+        "imagem": "../static/images/anel1.png"
     },
     {
         "id": 2,
-        "nome": "Anel de Prata",
-        "descricao": "Elegante anel de prata.",
-        "preco": 250.00
+        "nome": "Anel Life",
+        "descricao": "Duplo Bolinhas em Prata 925.",
+        "preco": 250.0,
+        "imagem": "../static/images/anel2.png"
     },
     {
         "id": 3,
-        "nome": "Anel de Diamante",
-        "descricao": "Anel luxuoso com diamantes genuínos.",
-        "preco": 5000.00
+        "nome": "Anel Solitário Classic",
+        "descricao": "Feito em Ouro Amarelo 18k com Diamante 0,05 ct.",
+        "preco": 4950.0,
+        "imagem": "../static/images/anel3.png"
     }
 ]
