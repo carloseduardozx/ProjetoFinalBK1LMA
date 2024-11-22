@@ -19,5 +19,26 @@
         "descricao": "Feito em Ouro Amarelo 18k com Diamante 0,05 ct.",
         "preco": 4950.0,
         "imagem": "../static/images/anel3.png"
+    },
+    {
+        "id": 4,
+        "nome": "Meia Aliança Oriental",
+        "descricao": "Feito em Ouro Amarelo 18k com Diamantes e Esmeraldas",
+        "preco": 7800.0,
+        "imagem": "../static/images/anel4.jpg"
+    },
+    {
+        "id": 5,
+        "nome": "Meia Aliança Oriental",
+        "descricao": "Feito em Ouro Branco 18k com Safiras",
+        "preco": 4900.0,
+        "imagem": "../static/images/anel5.jpg"
+    },
+    {
+        "id": 6,
+        "nome": "Meia Aliança",
+        "descricao": "Feito em Ouro Branco 18k com Diamantes de Laboratório 1,20 ct",
+        "preco": 25000.0,
+        "imagem": "../static/images/anel6.jpg"
     }
 ]

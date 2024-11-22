@@ -62,42 +62,92 @@ body {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
+/* Produtos */
+.produtos-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.produtos-titulo {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
 .produtos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: 1fr; /* Padrão: uma coluna */
+    gap: 20px; /* Espaço entre os itens */
 }
 
 .produto {
+    display: flex;
+    align-items: center;
     background-color: #fff;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    gap: 20px; /* Espaço entre imagem e conteúdo */
 }
 
-.produto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+.produto img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
 }
 
-.produto h3 {
+.produto-info {
+    flex: 1;
+    text-align: left;
+}
+
+.produto-info h3 {
     margin-bottom: 10px;
     color: #111;
 }
 
-.produto p {
+.produto-info p {
     margin-bottom: 10px;
     color: #555;
 }
 
-.produto span {
+.produto-info span {
+    display: block;
+    margin-bottom: 10px;
     font-size: 1.2rem;
     color: #967a67;
     font-weight: bold;
 }
 
+.produto-info .btn {
+    padding: 10px 15px;
+    background-color: #a58d7f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.produto-info .btn:hover {
+    background-color: #8c7362;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    .produtos {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
+    }
+}
+
+@media (min-width: 1024px) {
+    .produtos {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas grandes */
+    }
+}
+
+/* Restante do CSS */
 .contato {
     padding: 20px;
     background-color: #fff;
@@ -124,8 +174,8 @@ body {
     color: #555;
 }
 
-.contato input, 
-.contato textarea, 
+.contato input,
+.contato textarea,
 .contato button {
     padding: 10px;
     margin-bottom: 15px;
@@ -139,7 +189,7 @@ body {
 }
 
 .contato button {
-    background-color: #e4c4ae;
+    background-color: #897262;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -148,10 +198,8 @@ body {
 }
 
 .contato button:hover {
-    background-color: #b5dab6;
+    background-color: #6f8e70;
 }
-
-/* Footer */
 footer {
     background-color: #111;
     color: #fff;
@@ -166,7 +214,6 @@ footer p {
     font-size: 0.9rem;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .navbar .menu {
         flex-direction: column;
@@ -185,38 +232,39 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
-/* Botões */
 .btn {
     display: inline-block;
     padding: 10px 15px;
-    background-color: #e6c773;
-    color: #fff;
+    background-color: #a58d7f; 
+    color: #fff; 
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    border: none; 
+    border-radius: 5px; 
     font-weight: bold;
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+    font-size: 1rem;
 }
 
 .btn:hover {
-    background-color: #e6c773;
+    background-color: #8c7362; 
 }
 
 .btn-remove {
-    background-color: #d9534f;
+    background-color: #d9534f; 
 }
 
 .btn-remove:hover {
-    background-color: #c9302c;
+    background-color: #c9302c; 
 }
 
-/* Carrinho */
 .carrinho {
     max-width: 800px;
     margin: 20px auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.355);
 }
 
 .carrinho table {
@@ -239,6 +287,13 @@ footer p {
     text-align: right;
     margin-top: 10px;
 }
+.imagem-carrinho {
+    max-width: 100px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
 .sucesso-contato {
     text-align: center;
     padding: 50px 20px;
@@ -246,11 +301,11 @@ footer p {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     max-width: 600px;
-    margin: 20px auto;
+    margin: 50px auto;
 }
 
 .sucesso-contato h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #2c3e50;
     margin-bottom: 20px;
 }
@@ -264,7 +319,7 @@ footer p {
 .sucesso-contato .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #e6c773;
+    background-color: #8c7362;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -273,7 +328,7 @@ footer p {
 }
 
 .sucesso-contato .btn:hover {
-    background-color: #d4af37;
+    background-color: #47403c;
 }
 .sucesso-compra {
     text-align: center;
@@ -282,7 +337,7 @@ footer p {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     max-width: 600px;
-    margin: 20px auto;
+    margin: 50px auto;
 }
 
 .sucesso-compra h1 {
@@ -300,7 +355,7 @@ footer p {
 .sucesso-compra .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #e6c773;
+    background-color: #8c7362;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -309,7 +364,7 @@ footer p {
 }
 
 .sucesso-compra .btn:hover {
-    background-color: #d4af37;
+    background-color: #47403c;
 }
 html, body {
     height: 100%;

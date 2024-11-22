@@ -7,6 +7,7 @@
         <table>
             <thead>
                 <tr>
+                    <th>Imagem</th>
                     <th>Produto</th>
                     <th>Preço</th>
                     <th>Ação</th>
@@ -15,8 +16,15 @@
             <tbody>
                 {% for item in carrinho %}
                     <tr>
+                        <!-- Coluna da Imagem -->
+                        <td>
+                            <img src="{{ url_for('static', filename=item['imagem']) }}" alt="{{ item['nome'] }}" class="imagem-carrinho">
+                        </td>
+                        <!-- Nome do Produto -->
                         <td>{{ item['nome'] }}</td>
+                        <!-- Preço -->
                         <td>R$ {{ item['preco'] }}</td>
+                        <!-- Botão de Remoção -->
                         <td>
                             <a href="{{ url_for('remover_carrinho', produto_id=item['id']) }}" class="btn btn-remove">Remover</a>
                         </td>
@@ -26,10 +34,8 @@
         </table>
         <h3>Total: R$ {{ total }}</h3>
 
-        <!-- Botão de Continuar Comprando -->
         <a href="{{ url_for('produtos') }}" class="btn">Continuar Comprando</a>
 
-        <!-- Formulário para Finalizar Compra -->
         <form action="{{ url_for('finalizar_compra') }}" method="POST" style="display: inline;">
             <button type="submit" class="btn">Finalizar Compra</button>
         </form>

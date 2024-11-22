@@ -1,14 +1,20 @@
 {% extends "base.html" %}
+
 {% block content %}
-<section class="produtos-list">
-    <h1>Nossos Produtos</h1>
-    {% for produto in produtos %}
+<section class="produtos-container">
+    <h1 class="produtos-titulo">Nossos Produtos</h1>
+    <div class="produtos">
+        {% for produto in produtos %}
         <div class="produto">
-            <h3>{{ produto['nome'] }}</h3>
-            <p>{{ produto['descricao'] }}</p>
-            <span>R$ {{ produto['preco'] }}</span>
-            <a href="{{ url_for('adicionar_carrinho', produto_id=produto['id']) }}" class="btn">Adicionar ao Carrinho</a>
+            <img src="{{ url_for('static', filename=produto['imagem']) }}" alt="{{ produto['nome'] }}">
+            <div class="produto-info">
+                <h3>{{ produto['nome'] }}</h3>
+                <p>{{ produto['descricao'] }}</p>
+                <span>R$ {{ produto['preco'] }}</span>
+                <a href="{{ url_for('adicionar_carrinho', produto_id=produto['id']) }}" class="btn">Adicionar ao Carrinho</a>
+            </div>
         </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 </section>
 {% endblock %}
